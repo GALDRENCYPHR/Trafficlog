@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trafficlog</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        
+        .container {
+        height: 50%;
+        margin: auto;
+        width: 400px;
+        transform: translateY(50%);
+      }
+    </style>
+    <script>
+      function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 13,
+          center: { lat: 6.499998, lng: 6.499998 3.3499986 },
+        });
+        const trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(map);
+      }
+    </script>
+  </head>
+  <body>
+    <div class='container'>
+    <div id="map"></div>
+    </div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+  </body>
+</html>
